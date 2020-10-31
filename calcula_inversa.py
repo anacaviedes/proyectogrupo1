@@ -12,7 +12,7 @@ def inversa(matriz):
     c=matriz[0][1]
     d=matriz[1][0]
     e=1/(a*b-c*d)
-    matriz_t=np.array([[b,a],[-d,-c]])
+    matriz_t=np.array([[b,-c],[-d,a]])
     inversa=e*matriz_t
     return inversa
 
