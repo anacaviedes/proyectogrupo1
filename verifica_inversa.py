@@ -12,6 +12,7 @@ def verificacion (matriz):
         print("Prosigue la codificación")
     else:
         print("Utilice otra clave")
+
         
         
 if __name__=="__main__":
