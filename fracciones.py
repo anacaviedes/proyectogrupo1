@@ -73,3 +73,4 @@ class Fraccion:
 
   def __str__(self):
     return "{:.1f}/{:.1f}".format(self.numerador,self.denominador)
+hola
