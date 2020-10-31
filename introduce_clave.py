@@ -13,7 +13,7 @@ def clave():
     c1=cadena_num[1]
     c2=cadena_num[2]
     c3=cadena_num[3]
-    clave=np.array([[c0,c1],[c2,c3]])
+    clave=np.array([[c0,c1],[c2,c3]],int)
     #print(clave)
     return clave
 
