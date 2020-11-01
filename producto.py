@@ -36,3 +36,8 @@ def producto():
   else:
     print("Elija otra clave y vuelva a empezar")
   return pf
+
+
+if __name__=="__main__":
+    print(producto())
+    
