@@ -3,7 +3,7 @@
 """
 Created on Sat Oct 31 21:19:22 2020
 
-@author: lithium
+@author: Laura
 """
 
 import calcula_inversa as ci
