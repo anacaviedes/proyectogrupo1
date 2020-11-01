@@ -10,8 +10,11 @@ import numpy as np
 def verificacion (matriz):
     if matriz[0][0]*matriz[1][1] - matriz[0][1]*matriz[1][0] !=0:
         print("Prosigue la codificación")
+        k=True
     else:
         print("Utilice otra clave")
+        k=False
+    return k
 
         
         
