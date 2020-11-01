@@ -13,7 +13,6 @@ import Funciones_de_emparejamiento_y_desemparejamiento as fe
 import funciones_de_escritura_y_lectura_del_cifrado as el
 
 
-
 def producto():
   matriz=ic.clave()
   pf=list()
