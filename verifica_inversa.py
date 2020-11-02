@@ -12,7 +12,6 @@ def verificacion (matriz):
         print("Prosigue la codificación")
         k=True
     else:
-        print("Utilice otra clave")
         k=False
     return k
 
