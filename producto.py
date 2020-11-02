@@ -20,6 +20,9 @@ def producto():
     print("Elija otra clave")
     matriz=ic.clave()
   wt=input("Escriba '1' para codificar ó '2' para decodificar: ")
+  while wt not in ["1","2"]:
+    wt=input("Escriba '1' para codificar ó '2' para decodificar: ")
+
   if wt=="1":     
     cadena=fe.emparejada(el.escritura(input("Introduzca el mensaje a codificar: ")))
     for i in range (len(cadena)):
