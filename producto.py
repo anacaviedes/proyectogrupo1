@@ -24,8 +24,12 @@ def producto():
     cadena=fe.emparejada(el.escritura(input("Introduzca el mensaje a codificar: ")))
     for i in range (len(cadena)):
       p1=matriz.dot(cadena[i])
-      pf.append(int(p1[0]))
-      pf.append(int(p1[1]))
+      pf.append(str(int(p1[0])))
+      pf.append(" ")
+      pf.append(str(int(p1[1])))
+      pf.append(" ")
+    n=""
+    pf=n.join(pf)
     return print(pf)
   elif wt=="2":
     cifradoin=input("Introduzca los números de su mensaje cifrado separados por espacios: ")
