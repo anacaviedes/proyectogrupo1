@@ -1,1 +1,4 @@
-# proyectogrupo1
+# Proyecto Grupo 1
+## Primera Entrega
+El objetivo de este programa es ser utilizado para codificación, utilizando matrices y funciones de estas, como la inversa y el producto punto. 
+El programa permite al usuario elegir entre codificar o decodificar un mensaje. Para codificar un mensaje de texto el usuario deberá ingresar cuatro números que representan la matriz con la que va a ser codificado el mensaje, en caso de que la matriz que ingrese el usuario no sea válida se le solicita que ingrese un conjunto nuevo de números,una vez haya sigo infresada una matriz valida se le solicita al usuario ingresar el mensaje que desea codificar, a continuación el usuario recibirá el conjunto de números que representan su mensaje. Del mismo modo, para decodificar el mensaje, el usuario deberá ingresar los números que le fueron devueltos durante la codificación y la matriz con la que se codificó el mensaje, luego el usuario verá impreso en la pantalla, el mensaje original. 
