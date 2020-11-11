@@ -10,13 +10,19 @@ n,e,d=algoritmo_rsa.claves()
    
 def encripta_rsa(mensaje,n,e):  #la función recibe el mensaje y la clave pública
     encriptado=(mensaje**e)%n
-    return encriptado
+    cociente=encriptado//255
+    residuo=encriptado%255
+    return encriptado, cociente, residuo
    
-def desencripta_rsa(encriptado,n,d):
-    original=(encriptado**d)%n
+def desencripta_rsa(encriptado,cociente,residuo,n,d):
+    if residuo ==0:
+        original=((encriptado**d)%n)%255
+    if residuo!=0:
+        a=cociente*255+residuo
+        original=((a**d)%n)%255        
     return original
 """
 mensaje=19
-encriptado=encripta_rsa(mensaje,n,e)
-original=desencripta_rsa(encriptado,n,d)
-print(mensaje, encriptado, original)"""
+encriptado,cociente,residuo=encripta_rsa(mensaje,n,e)
+original=desencripta_rsa(encriptado,cociente,residuo,n,d)
+print(mensaje, encriptado, residuo, original)"""
