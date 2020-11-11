@@ -12,7 +12,7 @@ def encripta_rsa(mensaje,n,e):  #la función recibe el mensaje y la clave públi
     encriptado=(mensaje**e)%n
     cociente=encriptado//255
     residuo=encriptado%255
-    return encriptado, cociente, residuo
+    return encriptado, cociente, residuo #se usa el residuo si el encriptado es mayor que 255
    
 def desencripta_rsa(encriptado,cociente,residuo,n,d):
     if residuo ==0:
