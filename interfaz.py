@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 11 11:02:29 2020
 
-@author: Usuario
+@author: Ana Caviedes
 """
 
 from tkinter import filedialog
