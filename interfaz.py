@@ -16,8 +16,8 @@ raiz.title("Encriptación de imágenes")
 raiz.config(bg="white")
 
 def descargar(event=None):
-    #aviso4=Label(raiz,text="Su imagen se descargará")
-    #aviso4.pack()
+    aviso4=Label(raiz,text="Su imagen se descargará")
+    aviso4.pack()
 
 def encriptar():
     aviso5=Label(raiz,text="Su imagen se va a encriptar")
