@@ -6,7 +6,10 @@ Created on Wed Nov 11 18:10:33 2020
 """
 import pylab as pl
 from random import randrange
-im=pl.imread("/content/drive/My Drive/Programacion/Captura de pantalla 2020-11-11 150455.jpg")
+
+
+ruta=("C:/Users/Usuario/Documents/GitHub/proyectogrupo1/imagen_planetas.jpg")
+im=pl.imread(ruta)
 imp2=im.copy()
 foto=pl.where(imp2[:,:,2]<100,0,255).astype("uint8")  
 pl.imshow(foto)
@@ -60,3 +63,5 @@ def encripho(foto):
   for j in range(y):
     r=randrange(0,x)
     dezfila(j,r)
+
+#encripho(imp2)
