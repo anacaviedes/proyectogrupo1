@@ -24,9 +24,8 @@ def producto():
     wt=input("Escriba '1' para codificar ó '2' para decodificar: ")
 
   if wt=="1":     
-    cadena=input("Introduzca el mensaje o ruta archivo a codificar: ")
+    cadena=input(r"Introduzca el mensaje o ruta archivo a codificar: ")
     try: 
-     cadena=r''+cadena+''
      f=open(cadena)
      Ca=f.read()
      cadena=fe.emparejada(el.escritura(Ca))
