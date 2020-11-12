@@ -64,4 +64,11 @@ def encripho(foto):
     r=randrange(0,x)
     dezfila(j,r)
 
+def desencripho(inscol,insfila):
+  x=foto.shape[1]
+  y=foto.shape[0] 
+  for j in range(y):
+    dezfila(j,x-insfila[j])
+  for i in range(x):
+    dezcol(i,y-inscol[i])
 #encripho(imp2)
