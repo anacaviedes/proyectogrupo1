@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Nov 11 21:22:57 2020
+Created on Wed Nov 11 18:10:33 2020
 
 @author: Daniel
 """
 import pylab as pl
 from random import randrange
 
-im=pl.imread("/content/drive/My Drive/Programacion/Captura de pantalla 2020-11-11 150455.jpg")
+
+ruta=("C:/Users/Usuario/Desktop/prog/imagen_planetas.jpg")
+im=pl.imread(ruta)
 imp2=im.copy()
 foto=pl.where(imp2[:,:,2]<100,0,255).astype("uint8")  
 pl.imshow(foto)
-pl.foto.shape 
+foto.shape 
+
+"from google.colab import drive \n drive.mount('/content/drive')"
+
+
 
 def moverlist(lista,distancia,direccion):
   d=distancia
@@ -32,25 +38,25 @@ def moverlist(lista,distancia,direccion):
   return newlista
 
 #mueve una fila hacia la derecha
-
 def dezfila(f, d):
-  b=pl.foto[f,:]
+  b=foto[f,:]
   newlist=moverlist(b,d,"+")
   for i in range(len(b)):
-    pl.foto[f,i]=newlist[i]
-  
+    foto[f,i]=newlist[i]
+  pl.imshow(foto)
 
 #mueve una columna hacia la abajo
 
 def dezcol(c,D):
-  ñ=pl.foto[:,c]
+  ñ=foto[:,c]
   newlist=moverlist(ñ,D,"+")
   for i in range(len(ñ)):
-    pl.foto[i,c]=newlist[i]
-    
+    foto[i,c]=newlist[i]
+  pl.imshow(foto)
+  
 def encripho(foto):
   x=foto.shape[1]
-  y=foto.shape[0] 
+  y=foto.shape[0]
   insfila=[]
   inscol=[]
   for i in range(x):
@@ -61,11 +67,8 @@ def encripho(foto):
     r=randrange(0,x)
     dezfila(j,r)
     insfila.append(r)
-  return inscol,insfila
-  
-##recuerde que para tener las instruciones qeu desencriptan la foto debe asignar
-##alguna variable a la encriptacion para poder poner 
-##desencripho(nombre de su variable[0],nombre de su variable[1])
+  return inscol, insfila
+
 def desencripho(inscol,insfila):
   x=foto.shape[1]
   y=foto.shape[0] 
@@ -73,4 +76,9 @@ def desencripho(inscol,insfila):
     dezfila(j,x-insfila[j])
   for i in range(x):
     dezcol(i,y-inscol[i])
-    
+
+"""inscol,insfila=encripho(imp2)
+desencripho(inscol,insfila)"""
+
+
+
