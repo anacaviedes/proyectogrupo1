@@ -11,13 +11,20 @@ import tkinter.font as tkFont
 from PIL import ImageTk, Image
 
 raiz = Tk()
-raiz.geometry("1000x1000")
+raiz.geometry("2000x1000")
 raiz.title("Encriptación de imágenes")
 raiz.config(bg="white")
 
 def descargar(event=None):
     aviso4=Label(raiz,text="Su imagen se descargará")
     aviso4.pack()
+
+def encriptar():
+    aviso5=Label(raiz,text="Su imagen se va a encriptar")
+    aviso5.pack()
+    button3= Button(raiz, text="Descargar", command=descargar, activebackground="#5FB4EF", bg="white", overrelief="raised")
+    button3.pack()
+
 
 
 def subir(event=None):
@@ -29,14 +36,13 @@ def subir(event=None):
     img=ImageTk.PhotoImage(file=filename2)
     img2=Label(raiz, image=img)
     img2.pack()
-    #espacio=Label(raiz,text= " ",bg="white")
-    #espacio.pack()
-    #button2= Button(raiz, text="Descargar", command=descargar, activebackground="#5FB4EF", bg="white", overrelief="raised")
-    #button2.pack()
+    button2= Button(raiz, text="Encriptar", command=encriptar, activebackground="#5FB4EF", bg="white", overrelief="raised")
+    button2.pack()
 
-
-
-
+scrollbar=Scrollbar(raiz)
+scrollbar.pack(side="right",fill="y")
+listbox=Listbox(raiz, yscrollcommand=scrollbar.set)
+scrollbar.config(command=listbox.yview)
 
 #imagenpru=ImageTk.PhotoImage(file="/Users/lithium/Documents/GitHub/proyectogrupo1/prueba.jpg")
 #imagenprueba=Label(raiz,image=imagenpru)
