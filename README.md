@@ -11,3 +11,7 @@ Este método de encriptación asigna, en principio, un número a cada caracter; 
 - Se utilizó el algoritmo RSA mencionado para cambiar de color los pixeles de una imagen.
 - Se creó otro algoritmo de encriptación y desencriptación de imágenes consistente en cambiar de lugar los pixeles.
 - Se está trabajando en la interfaz de estos programas, para poder manipularlos con botones, subir archivos, etc.
+
+##Tercera Entrega
+se necesita instalar el modulo pyaes: ejecutar PowerShellPrompt y escribir: conda install -c conda-forge pyaes
+- Se creó un código que convierte una imagen a información de bytes, y utiliza pyaes para encriptar esta información. Lo que hace pyaes internamente es organizar la información en matrices o bloques 4x4 (que tienen en total 128 bits c/u) y utilizar la clave para hacer sustituciones y permutaciones en varias rondas, cada ronda cambiando la clave. Debido a la forma de los bloques, la clave principal debe ser de 128, 192 o 256 bits (y hace 10, 12 o 14 rondas, respectivamente). Este programa sirve para enviar imágenes "secretas", es decir, al encriptarlas quedan invisibles para quien no tiene la clave.  
