@@ -3,28 +3,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
-
+import Enc_ruta as ru
 import introduce_clave as ic
-import Funciones_de_emparejamiento_y_desemparejamiento as fe
-import fun_esc_lec_2 as el
-
-def iter(cadena,i,matriz):
-    pf=[]
-    f=open(cadena)
-    Ca=f.read()
-    cadena=fe.emparejada(el.escritura(Ca))
-    for i in range(len(cadena)):
-        p1 = matriz.dot(cadena[i])
-        pf.append(str(int(p1[0])))
-        pf.append(" ")
-        pf.append(str(int(p1[1])))
-        pf.append(" ")
-    n = ""
-    pf = n.join(pf)
-    ar=r"Archivo_Encriptado"+str(i)+".txt"
-    En=open(ar, "w")
-    En.write(pf)
-    return ar
+import pyaes_encriptado as pya
 
 def gmail():
     usuario=input("Ingrese su correo : ")
@@ -38,13 +19,26 @@ def gmail():
     msg['To'] = receptor
     msg['Subject'] = asunto
 
-    matriz = ic.clave()
-    files=input("Ingrese las rutas de sus archivos : ")
+    files=input("Ingrese los nombres de sus archivos : ")
     files=files.split(" ")
+
+    ma=True
+    cla=True
 
     for i in range(len(files)):
         base = MIMEBase('application', 'octet-stream')
-        nombre=iter(files[i],i,matriz)
+        if files[i][-1]=="t":
+            if ma:
+                matriz = ic.clave()
+                ma=False
+            nombre=ru.enc_ruta(files[i],i,matriz)
+        elif files[i][-1]=="g":
+             if cla:
+                clave = bytes(input("Ingrese la clave para imagen: "), 'utf-8')
+                cla=False
+             b=pya.Encriptado(files[i], 1)
+             b.encriptacion(clave)
+             nombre=b.guardar()
         adjun = open(nombre, 'rb')
         base.set_payload((adjun).read())
         encoders.encode_base64(base)
@@ -62,3 +56,7 @@ def gmail():
 
 if __name__=="__main__":
    gmail()
+
+#pruebapython038@gmail.com
+#prueba123
+#sefloreza@unal.edu.co

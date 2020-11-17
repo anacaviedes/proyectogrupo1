@@ -15,4 +15,4 @@ Este método de encriptación asigna, en principio, un número a cada caracter; 
 ## Tercera Entrega
 - Se corrigió el código que cambiaba de lugar los pixeles, de manera que ahora se puede usar en imágenes a color.
 - (se necesita instalar el modulo pyaes: ejecutar PowerShellPrompt y escribir: conda install -c conda-forge pyaes). Se creó un código que convierte una imagen a información de bytes, y utiliza pyaes para encriptar esta información. Lo que hace pyaes internamente es organizar la información en matrices o bloques 4x4 (que tienen en total 128 bits c/u) y utilizar la clave para hacer sustituciones y permutaciones en varias rondas, cada ronda cambiando la clave. Debido a la forma de los bloques, la clave principal debe ser de 128, 192 o 256 bits (y hace 10, 12 o 14 rondas, respectivamente). Este programa sirve para enviar imágenes "secretas", es decir, al encriptarlas quedan invisibles para quien no tiene la clave. 
-- Se añadió la funcionalidad de automatizar el envío de archivos de texto encriptados por Gmail.
+- Se añadió la funcionalidad de automatizar la encriptacion de múltiples archivos (de imagen o texto) y el envío de los mismos por medio de Gmail.
