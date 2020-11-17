@@ -47,17 +47,17 @@ if __name__=="__main__":
     archivo=input("Escriba el nombre del archivo: ") #el nombre, no la ubicación; inclyendo el formato: .jpg
     clave=bytes(input("Ingrese la clave: "), 'utf-8') #16, 24 o 32 caracteres
 
-"""
-b=Encriptado(archivo, a)
-b.encriptacion(clave)
-b.guardar()
-"""
-"""
-c=Encriptado(archivo,a)
-c.desencriptacion(clave)
-c.guardar()
-"""
+    """
+    b=Encriptado(archivo, a)
+    b.encriptacion(clave)
+    b.guardar()
+    """
 
-#clave128 = 16caracteres.LET
-#clave192 = 24caracteres.LET;-S_Nume
-#clave256 = 32caracteres.LETR;-SNume::-><+¡?"""
+    c=Encriptado(archivo,a)
+    c.desencriptacion(clave)
+    c.guardar()
+
+
+    #clave128 = 16caracteres.LET
+    #clave192 = 24caracteres.LET;-S_Nume
+    #clave256 = 32caracteres.LETR;-SNume::-><+¡?"""
