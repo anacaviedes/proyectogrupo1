@@ -52,11 +52,11 @@ if __name__=="__main__":
     b.encriptacion(clave)
     b.guardar()
     """
-
+    """
     c=Encriptado(archivo,a)
     c.desencriptacion(clave)
     c.guardar()
-
+    """
 
     #clave128 = 16caracteres.LET
     #clave192 = 24caracteres.LET;-S_Nume
