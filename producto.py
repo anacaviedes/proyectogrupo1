@@ -11,7 +11,7 @@ import verifica_inversa as vi
 import introduce_clave as ic
 import Funciones_de_emparejamiento_y_desemparejamiento as fe
 import fun_esc_lec_2 as el
-
+import Enc_ruta as ru
 
 def producto():
   matriz=ic.clave()
@@ -24,28 +24,19 @@ def producto():
     wt=input("Escriba '1' para codificar ó '2' para decodificar: ")
 
   if wt=="1":     
-    cadena=input(r"Introduzca el mensaje o ruta archivo a codificar: ")
+    cadena=input(r"Introduzca el mensaje o nombre del archivo a codificar: ")
     try: 
-     f=open(cadena)
-     Ca=f.read()
-     cadena=fe.emparejada(el.escritura(Ca))
-     a=True
+     ru.enc_ruta(cadena,0,matriz)
     except:
-     a=False
-     cadena=fe.emparejada(el.escritura(cadena))
-      
-    for i in range (len(cadena)):
-      p1=matriz.dot(cadena[i])
-      pf.append(str(int(p1[0])))
-      pf.append(" ")
-      pf.append(str(int(p1[1])))
-      pf.append(" ")
-    n=""
-    pf=n.join(pf)
-    if a:
-      En=open("Archivo_Enciptado", "w")
-      En.write(pf)
-    else:
+      cadena=fe.emparejada(el.escritura(cadena))
+      for i in range (len(cadena)):
+        p1=matriz.dot(cadena[i])
+        pf.append(str(int(p1[0])))
+        pf.append(" ")
+        pf.append(str(int(p1[1])))
+        pf.append(" ")
+      n=""
+      pf=n.join(pf)
       return print(pf)
 
   elif wt=="2":
