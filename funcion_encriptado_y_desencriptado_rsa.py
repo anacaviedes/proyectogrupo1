@@ -4,6 +4,7 @@ Created on Wed Nov 11 17:08:53 2020
 
 @author: ERICK
 """
+%pylab inline
 import matplotlib.pyplot as plt
 import numpy as np
 import encriptado_y_desencriptado_rsa
@@ -32,4 +33,4 @@ def desencriptado_imagen(im,inf_extra,n,d):
                 p = encriptado_y_desencriptado_rsa.desencripta_rsa(inf_extra[i, j, k, 0], inf_extra[i, j, k, 1],inf_extra[i, j, k, 2], n, d)
                 im[i, j, k] = p
     return(im)
-#imshow(encriptado_imagen('',n,d)[0])
+imshow(encriptado_imagen('',n,d)[0])
