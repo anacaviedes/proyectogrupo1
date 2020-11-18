@@ -32,31 +32,33 @@ class Encriptado:
     
     def guardar(self):
         if self.accion==1:
-            image = open(""+archivo, "wb")
+            image = open(""+self.archivo, "wb") #cambio de +archivo a +self.archivo hecho por Joel
             image.write(base64.b64decode(self.encriptado))
             image.close()
-            print("Guardado ",""+archivo) 
+            print("Guardado ",""+self.archivo) 
+            return self.archivo  #linea agregada por Joel          
         if self.accion==2:
-            image = open(""+archivo, "wb")
+            image = open(""+self.archivo, "wb")
             image.write(base64.b64decode(self.desencriptado))
             image.close()
-            print("Guardado ",""+archivo) 
+            print("Guardado ",""+self.archivo) 
 
-a=int(input("Escriba 1 para encriptar o 2 para desencriptar: "))
-archivo=input("Escriba el nombre del archivo: ") #el nombre, no la ubicación; inclyendo el formato: .jpg
-clave=bytes(input("Ingrese la clave: "), 'utf-8') #16, 24 o 32 caracteres
-
-"""
-b=Encriptado(archivo, a)
-b.encriptacion(clave)
-b.guardar()
-"""
-"""
-c=Encriptado(archivo,a)
-c.desencriptacion(clave)
-c.guardar()"""
-
-"""
-#clave128 = 16caracteres.LET
-#clave192 = 24caracteres.LET;-S_Nume
-#clave256 = 32caracteres.LETR;-SNume::-><+¡?"""
+if __name__=="main": #linea agregada por Joel 
+    a=int(input("Escriba 1 para encriptar o 2 para desencriptar: "))
+    archivo=input("Escriba el nombre del archivo: ") #el nombre, no la ubicación; inclyendo el formato: .jpg
+    clave=bytes(input("Ingrese la clave: "), 'utf-8') #16, 24 o 32 caracteres
+    
+    """
+    b=Encriptado(archivo, a)
+    b.encriptacion(clave)
+    b.guardar()"""
+    
+    """
+    c=Encriptado(archivo,a)
+    c.desencriptacion(clave)
+    c.guardar()"""
+    
+    """
+    #clave128 = 16caracteres.LET
+    #clave192 = 24caracteres.LET;-S_Nume
+    #clave256 = 32caracteres.LETR;-SNume::-><+¡?"""
