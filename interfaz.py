@@ -15,9 +15,9 @@ raiz.geometry("2000x1000")
 raiz.title("Encriptación de imágenes")
 raiz.config(bg="white")
 
-def descargar(event=None):
-    aviso4=Label(raiz,text="Su imagen se descargará")
-    aviso4.pack()
+#def descargar(event=None):
+    #aviso4=Label(raiz,text="Su imagen se descargará")
+    #aviso4.pack()
 
 def encriptar():
     aviso5=Label(raiz,text="Su imagen se va a encriptar")
@@ -38,8 +38,8 @@ def subir(event=None):
     img2.pack()
     button2= Button(raiz, text="Encriptar", command=encriptar, activebackground="#5FB4EF", bg="white", overrelief="raised")
     button2.pack()
-    #button3= Button(raiz, text="Descargar", command=descargar, activebackground="#5FB4EF", bg="white", overrelief="raised")
-    #button3.pack()
+    button3= Button(raiz, text="Descargar", command=descargar, activebackground="#5FB4EF", bg="white", overrelief="raised")
+    button3.pack()
 
 
 scrollbar=Scrollbar(raiz)
