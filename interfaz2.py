@@ -39,6 +39,11 @@ class App():
         self.encriptar.pya.encriptacion(self.introducirclave)
         self.encripar.pya.guardar()
 
+    def desencriptado2(self,event=None):
+        self.encriptar=pya.Encriptado(self.filename2,1)
+        self.encriptar.pya.desencriptacion(self.introducirclave)
+        self.encripar.pya.guardar()
+
 
     def introducirclave(self, event=None):
         anuncio2=Label(raiz, text=("Introduzca una clave de 16 caracteres"), bg= "White")
