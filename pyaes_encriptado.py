@@ -43,7 +43,7 @@ class Encriptado:
             image.close()
             print("Guardado ",""+self.archivo) 
 
-if __name__=="main": #linea agregada por Joel 
+if __name__=="__main__": #linea agregada por Joel 
     a=int(input("Escriba 1 para encriptar o 2 para desencriptar: "))
     archivo=input("Escriba el nombre del archivo: ") #el nombre, no la ubicación; inclyendo el formato: .jpg
     clave=bytes(input("Ingrese la clave: "), 'utf-8') #16, 24 o 32 caracteres
