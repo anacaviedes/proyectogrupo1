@@ -6,7 +6,7 @@ Created on Tue Nov 10 10:45:49 2020
 """
 import algoritmo_rsa
 if __name__=="__main__":
-    n,e,d=algoritmo_rsa.claves()
+    n,e,d= algoritmo_rsa.claves()
    
 def encripta_rsa(mensaje,n,e):  #la función recibe el mensaje y la clave pública
     encriptado=(mensaje**e)%n

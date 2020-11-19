@@ -9,7 +9,7 @@ import random
 import lista_primos
 
 def claves():
-    lista=lista_primos.lista_primos(500)
+    lista= lista_primos.lista_primos(500)
     p=random.choice(lista)
     q=random.choice(lista)
     

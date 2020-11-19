@@ -1,10 +1,6 @@
 from tkinter import filedialog
 from tkinter import *
 import tkinter.font as tkFont
-from PIL import ImageTk, Image
-import fase_1_imagenes_BN as encriptado
-import pylab as pl
-from random import randrange
 import pyaes_encriptado as pya
 
 class App():
