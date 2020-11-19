@@ -24,7 +24,7 @@ class Encriptado:
     
     def desencriptacion(self, clave):
         if self.accion==2:
-            with open(archivo, "rb") as img_file:
+            with open(self.archivo, "rb") as img_file:
                 self.imagen64b2 = base64.b64encode(img_file.read())      
             aes = pyaes.AESModeOfOperationCTR(clave)
             self.desencriptado=(aes.decrypt(base64.b64decode(self.imagen64b2))).decode("utf-8")
