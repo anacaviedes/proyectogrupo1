@@ -20,44 +20,55 @@ class App():
         self.label.pack()
         self.button.pack()
 
-    def encripho(self, foto):
-      x=foto.shape[1]
-      y=foto.shape[0]
-      self.insfila=[]
-      self.inscol=[]
-      for i in range(x):
-        r=randrange(0,y)
-        encriptado.dezcol(i,r,foto)
-        self.inscol.append(r)
-      for j in range(y):
-        r=randrange(0,x)
-        encriptado.dezfila(j,r,foto)
-        self.insfila.append(r)
-
     def encriptado2(self,event=None):
         self.encriptar=pya.Encriptado(self.filename2,1)
-        self.encriptar.pya.encriptacion(self.introducirclave)
-        self.encripar.pya.guardar()
+        self.introducirclave1()
+
+    def guardar1(self, event=None):
+        self.encriptar.guardar()
+
+    def guardar2(self, event=None):
+        self.encriptar.guardar()
+
 
     def desencriptado2(self,event=None):
-        self.encriptar=pya.Encriptado(self.filename2,1)
-        self.encriptar.pya.desencriptacion(self.introducirclave)
-        self.encripar.pya.guardar()
+        self.encriptar=pya.Encriptado(self.filename2,2)
+        self.introducirclave2()
 
 
-    def introducirclave(self, event=None):
+    def introducirclave1(self, event=None):
         anuncio2=Label(raiz, text=("Introduzca una clave de 16 caracteres"), bg= "White")
         anuncio2.pack()
-        prueba=Entry(raiz)
-        prueba.pack()
-        boton=Button(raiz,text="Seleccionar", command=anuncio)
+        self.prueba=Entry(raiz)
+        self.prueba.pack()
+        boton=Button(raiz,text="Seleccionar", command=self.anuncio)
         boton.pack()
-        return self.prueba2
+
+    def introducirclave2(self, event=None):
+        anuncio2=Label(raiz, text=("Introduzca su clave de 16 caracteres"), bg= "White")
+        anuncio2.pack()
+        self.prueba=Entry(raiz)
+        self.prueba.pack()
+        boton=Button(raiz,text="Seleccionar", command=self.anuncio1)
+        boton.pack()
 
     def anuncio(self,event=None):
-        self.prueba2=prueba.get()
-        anuncio=Label(raiz, text=("La clave introducida fue:"+prueba2), bg= "White")
+        self.prueba2=self.prueba.get()
+        self.clavefinal=bytes(self.prueba2, 'utf-8')
+        anuncio=Label(raiz, text=("La clave introducida fue:"+self.prueba2), bg= "White")
         anuncio.pack()
+        self.button3= Button(self.frame, text="Descargar", command=self.guardar1, activebackground="#5FB4EF", bg="white", overrelief="raised")
+        self.button3.pack()
+        self.encriptar.encriptacion(self.clavefinal)
+
+    def anuncio1(self,event=None):
+        self.prueba2=self.prueba.get()
+        self.clavefinal=bytes(self.prueba2, 'utf-8')
+        anuncio=Label(raiz, text=("La clave introducida fue:"+self.prueba2), bg= "White")
+        anuncio.pack()
+        self.button3= Button(self.frame, text="Descargar", command=self.guardar2, activebackground="#5FB4EF", bg="white", overrelief="raised")
+        self.button3.pack()
+        self.encriptar.desencriptacion(self.clavefinal)
 
     #def encriptar(self, event=None):
         #im=pl.imread(self.filename2)
@@ -101,9 +112,9 @@ class App():
         filename = filedialog.askopenfilename()
         print('Selected:', filename)
         self.filename2=str(filename)
-        self.img=ImageTk.PhotoImage(file=self.filename2)
-        self.img2=Label(raiz, image=self.img, bg="white")
-        self.img2.pack()
+        #self.img=ImageTk.PhotoImage(file=self.filename2)
+        #self.img2=Label(raiz, image=self.img, bg="white")
+        #self.img2.pack()
         self.seleccion()
 
     #def descargarencrip(self, event=None):
@@ -121,7 +132,7 @@ class App():
     def seleccion(self, event=None):
         variable = StringVar()
         self.radiobutton1 = Radiobutton(text="Encriptar", variable=variable, value=1, command=self.encriptado2,bg="White")
-        self.radiobutton2 = Radiobutton(text="Desencriptar", variable=variable, value=2, command=self.desencriptar,bg="White")
+        self.radiobutton2 = Radiobutton(text="Desencriptar", variable=variable, value=2, command=self.desencriptado2,bg="White")
         self.radiobutton1.pack()
         self.radiobutton2.pack()
         variable.get()
