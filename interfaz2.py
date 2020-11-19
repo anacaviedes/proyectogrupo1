@@ -24,13 +24,16 @@ class App():
         self.encriptar=pya.Encriptado(self.filename2,1)
         self.introducirclave1()
 
+    def guardar1(self, event=None):
+        self.encriptar.guardar()
+
     def guardar2(self, event=None):
         self.encriptar.guardar()
 
 
     def desencriptado2(self,event=None):
-        self.encriptar=pya.Encriptado(self.filename2,1)
-        self.introducirclave1()
+        self.encriptar=pya.Encriptado(self.filename2,2)
+        self.introducirclave2()
 
 
     def introducirclave1(self, event=None):
@@ -54,7 +57,7 @@ class App():
         self.clavefinal=bytes(self.prueba2, 'utf-8')
         anuncio=Label(raiz, text=("La clave introducida fue:"+self.prueba2), bg= "White")
         anuncio.pack()
-        self.button3= Button(self.frame, text="Descargar", command=self.guardar2, activebackground="#5FB4EF", bg="white", overrelief="raised")
+        self.button3= Button(self.frame, text="Descargar", command=self.guardar1, activebackground="#5FB4EF", bg="white", overrelief="raised")
         self.button3.pack()
         self.encriptar.encriptacion(self.clavefinal)
 
@@ -109,11 +112,9 @@ class App():
         filename = filedialog.askopenfilename()
         print('Selected:', filename)
         self.filename2=str(filename)
-        self.img=ImageTk.PhotoImage(file=self.filename2)
-        self.img2=Label(raiz, image=self.img, bg="white")
-        self.img2.pack()
-        self.im =Image.fromarray(self.foto)
-        self.im.save("Imagen encriptada.jpg")
+        #self.img=ImageTk.PhotoImage(file=self.filename2)
+        #self.img2=Label(raiz, image=self.img, bg="white")
+        #self.img2.pack()
         self.seleccion()
 
     #def descargarencrip(self, event=None):
