@@ -5,8 +5,8 @@ Created on Tue Nov 10 10:45:49 2020
 @author: Usuario
 """
 import algoritmo_rsa
-
-n,e,d=algoritmo_rsa.claves()
+if __name__=="__main__":
+    n,e,d=algoritmo_rsa.claves()
    
 def encripta_rsa(mensaje,n,e):  #la función recibe el mensaje y la clave pública
     encriptado=(mensaje**e)%n
@@ -21,6 +21,8 @@ def desencripta_rsa(encriptado,cociente,residuo,n,d):
         a=cociente*255+residuo
         original=((a**d)%n)%255        
     return original
+
+
 """
 mensaje=19
 encriptado,cociente,residuo=encripta_rsa(mensaje,n,e)
