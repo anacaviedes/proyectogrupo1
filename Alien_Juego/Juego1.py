@@ -46,9 +46,11 @@ class Jugador():
             if self.disparando:
                 if self.cuentapasos2+1>=33:
                     self.cuentapasos2=0
+                if self.cuentapasos+1>=33:
+                    self.cuentapasos=0
                 if self.derecha:
-                    pantalla.blit(disparoderecha[self.cuentapasos2//3],(self.x,self.y))
-                    self.cuentapasos2+=1
+                    pantalla.blit(disparoderecha[self.cuentapasos//3],(self.x,self.y))
+                    self.cuentapasos+=1
                 else:
                     if self.cuentapasos2==6:
                         self.x=self.x-38
