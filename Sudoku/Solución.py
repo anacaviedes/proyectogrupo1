@@ -1,4 +1,3 @@
-import numpy as np
 def intento(sudo, k, pos):
     for i in range(9):
         if sudo[pos[0]][i] == k :
@@ -35,8 +34,7 @@ def solu(sudo):
         if intento(sudo, k, (fil,col)):
             sudo[fil][col] = k
             if solu(sudo):
-                sudo = np.matrix(sudo)
-                return print(sudo)
+                return sudo
             sudo[fil][col] = 0
     return False
 
@@ -50,5 +48,5 @@ if __name__ == "__main__":
           [0, 6, 0, 7, 2, 0, 0, 5, 9],
           [0, 0, 0, 3, 0, 0, 1, 0, 0],
           [0, 7, 0, 0, 0, 9, 2, 0, 0]]
-  solu(prueba)
+  print(solu(prueba))
 
