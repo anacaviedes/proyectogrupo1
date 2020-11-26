@@ -21,7 +21,7 @@ Este método de encriptación asigna, en principio, un número a cada caracter; 
 
 ## Cuarta Entrega
 Empezamos un nuevo proyecto con juegos:
--Solucionador de Sudokus
--Ahorcado: además del juego tradicional, escoge categorías y niveles de dificultad, y es con límite de tiempo. En proceso: conjugar la parte gráfica con lo demás.
--Aliens
--Solucionador de laberintos
+- Solucionador de Sudokus
+- Ahorcado: además del juego tradicional, escoge categorías y niveles de dificultad, y es con límite de tiempo. En proceso: conjugar la parte gráfica con lo demás.
+- Aliens
+- Solucionador de laberintos
