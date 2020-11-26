@@ -24,5 +24,5 @@ Empezamos un nuevo proyecto con juegos:
 - Solucionador de Sudokus
 - Ahorcado: además del juego tradicional, escoge categorías y niveles de dificultad, y es con límite de tiempo. En proceso: conjugar la parte gráfica con lo demás.
 - Aliens
-- Solucionador de laberintos
+- Generador de laberintos (manual y pseudoaleatoiro): 
 - Juego multijugador "Cuadrito"
