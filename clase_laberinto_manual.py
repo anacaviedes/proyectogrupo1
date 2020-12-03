@@ -116,19 +116,3 @@ class laberinto:
   def matriz(self):  
     return self.m
    
-x=40
-y=40
-celdas1=laberinto(x,y)
-celdas=celdas1.matriz()
-
-i=0
-for j in range(int((x/2)+1)):
-  celdas1.linea(i,0,i,y)
-  i=i+2
-
-i=0
-for j in range(int((y/2)+1)):
-  celdas1.linea(0,i,x,i)
-  i=i+2
-celdas1.mostrar()
-celdas=celdas1.matriz()
