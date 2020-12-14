@@ -10,8 +10,11 @@ def main():
     pygame.init()
     pygame.mouse.set_cursor(*pygame.cursors.diamond)
     
-    size = width, height = 500, 500
+    size = width, height = 900, 600
     black = 0, 0, 0
+    white = 255, 255, 255
+    red = 255, 0, 0
+    blue = 0, 0, 255
     screen = pygame.display.set_mode(size)
     
     linea_blanca_vertical = pygame.image.load("linea_blanca.gif")
@@ -33,15 +36,23 @@ def main():
     lista_blancas = []
     lista_jugadas = []
     
-    for i in range(10, width-109, 110):
-        for j in range(0, height-9, 110):
+    for i in range(210, width-309, 110):
+        for j in range(50, height-9, 110):
             screen.blit(linea_blanca_horizontal,(i,j))
             lista_blancas.append(pygame.Rect(i,j,100,10))
             
-    for i in range(0, width-9, 110):
-        for j in range(10,height-109,110):
+    for i in range(200, width-209, 110):
+        for j in range(60,height-109,110):
             screen.blit(linea_blanca_vertical,(i,j))
             lista_blancas.append(pygame.Rect(i,j,10,100))
+    font = pygame.font.Font(None, 74)
+    text = font.render("0", 1, white)
+    screen.blit(text, (100,100))
+    text = font.render("0", 1, white)
+    screen.blit(text, (750,100))
+    font2 = pygame.font.Font(None, 25)
+    toca_turno = font2.render("Turno rojos", 1, red)
+    screen.blit(toca_turno, (725,200))
     pygame.display.flip()
     
     turno=1
@@ -118,10 +129,26 @@ def main():
                                                 azules = color_turno
                                             punto+=1
                                             print("azules:", azules[3], "rojos:",rojos[3])
+                        
       
                         if punto == 0:                    
-                            turno *=-1  
+                            turno *=-1
+                        
+                        pygame.draw.rect( screen, black, pygame.Rect(0,0,200,height))
+                        font = pygame.font.Font(None, 74)
+                        text = font.render(str(azules[3]), 1, white)
+                        screen.blit(text, (100,100))
+                        pygame.draw.rect( screen, black, pygame.Rect(700,0,200,height))
+                        text = font.render(str(rojos[3]), 1, white)
+                        screen.blit(text, (750,100))
                         lista_blancas.remove(i)
+                        font2 = pygame.font.Font(None, 25)
+                        if turno == 1:
+                            toca_turno = font2.render("Turno rojos", 1, red)
+                            screen.blit(toca_turno, (725,200))
+                        elif turno == -1:
+                            toca_turno = font2.render("Turno azules", 1, blue)
+                            screen.blit(toca_turno, (50,200))
                         pygame.display.flip()
         if len(lista_blancas)==0:
             running=False
