@@ -8,7 +8,7 @@ Created on Wed Nov 11 17:08:53 2020
 import matplotlib.pyplot as plt
 import numpy as np
 import encriptado_y_desencriptado_rsa
-imagen_original= plt.imread("C:\\Users\\ERICK\\Downloads\\SimpleBMP.bmp")
+imagen_original= plt.imread("C:\\Users\\ERICK\\Downloads\\pruebalinkBMP.bmp")
 def encriptado_imagen(direccion,n,e):
     im=plt.imread(direccion)
     im=im.copy()
@@ -33,6 +33,6 @@ def desencriptado_imagen(im,inf_extra,n,d):
             for k in range(f[2]):
                 im[i,j,k] = encriptado_y_desencriptado_rsa.desencripta_rsa(int(inf_extra[i, j, k][0]), int(inf_extra[i, j, k][1]), int(inf_extra[i, j, k][2]), n, d)
     return(im)
-a = encriptado_imagen("C:\\Users\\ERICK\\Downloads\\SimpleBMP.bmp",123679,5)
+a = encriptado_imagen("C:\\Users\\ERICK\\Downloads\\pruebalinkBMP.bmp",2359,5)
 b = desencriptado_imagen(a[0],a[1],123679,98381)
-plt.imshow(b)
+plt.imshow(a[0])

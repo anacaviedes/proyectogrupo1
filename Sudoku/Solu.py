@@ -1,17 +1,17 @@
 def intento(sudo, k, pos):
     for i in range(9):
-        if sudo[pos[0]][i] == k :
+        if sudo[pos[0]][i] == k:
             return False
 
     for i in range(9):
-        if sudo[i][pos[1]] == k :
+        if sudo[i][pos[1]] == k:
             return False
 
     esq_col = (pos[1]//3)*3
     esq_fil = (pos[0]//3)*3
     for i in range(esq_fil, esq_fil + 3):
         for j in range(esq_col, esq_col + 3):
-            if sudo[i][j] == k :
+            if sudo[i][j] == k:
                 return False
 
     return True
@@ -25,7 +25,7 @@ def vacio(sudo):
 
 def solu(sudo):
     pos = vacio(sudo)
-    if pos=="Fin":
+    if pos == "Fin":
         return True
     else:
         fil,col=pos
